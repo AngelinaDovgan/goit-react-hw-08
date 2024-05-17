@@ -23,6 +23,8 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
+   console.log("isRefreshing:", isRefreshing);
+
   return isRefreshing ? (
     <p>Refreshing user please wait...</p>
   ) : (
