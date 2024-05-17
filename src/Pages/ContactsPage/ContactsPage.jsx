@@ -4,6 +4,7 @@ import { fetchContacts } from "../../redux/contacts/operations";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ContactList from "../../components/ContactList/ContactList";
+import { selectLoading } from "../../redux/contacts/selectors";
 
 export default function ContactsPage() {
     const dispatch = useDispatch();
