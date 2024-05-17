@@ -4,7 +4,7 @@ export default function HomePage() {
     return (
         <div>
             <PageTitle>
-                Welcome{" "}
+                Welcome
             </PageTitle>
             <p>
                 Hello!
