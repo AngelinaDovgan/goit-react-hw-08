@@ -8,17 +8,20 @@ import { Form } from "formik";
 export default function LoginForm() {
     const dispatch = useDispatch();
 
-    const handleSubmit = (values, actions) => {
-        dispatch(login(values))
-            .unwrap()
-            .then(response => {
-                toast.success("Yohoo!");
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        actions.resetForm();
-    };
+    const handleSubmit = (values, { resetForm }) => {
+    dispatch(login(values))
+        .unwrap()
+        .then(response => {
+            toast.success("Yohoo!");
+        })
+        .catch(error => {
+            toast.error("Something went wrong...");
+        })
+        .finally(() => {
+            resetForm();
+        });
+};
+
 
     return (
         <Formik
