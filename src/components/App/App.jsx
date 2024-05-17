@@ -10,10 +10,10 @@ import PrivateRoute from '../PrivateRoute';
 import { lazy } from 'react';
 import { Route } from 'react-router-dom';
 
-const HomePage = lazy(() => import("../../Pages/HomePage/HomePage"));
-const RegistrationPage = lazy(() => import("../../Pages/RegistrationPage/RegistrationPage"));
-const LoginPage = lazy(() => import("../../Pages/LoginPage/LoginPage"));
-const ContactsPage = lazy(() => import("../../Pages/ContactsPage/ContactsPage"));
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const RegistrationPage = lazy(() => import("../../pages/RegistrationPage/RegistrationPage"));
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage"));
+const ContactsPage = lazy(() => import("../../pages/ContactsPage/ContactsPage"));
 
 export default function App() {
   const dispatch = useDispatch();
