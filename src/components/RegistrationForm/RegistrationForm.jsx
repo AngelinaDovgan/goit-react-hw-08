@@ -10,29 +10,29 @@ export default function RegistrationForm() {
         actions.resetForm();
     };
 
-    return (
-        <Formik
-            initialValues={{
-                name: "",
-                email: "",
-                password: "",
-            }}
-            onSubmit={handleSubmit}>
-            <Form autoComplete="off">
-                <label>Username
-                    <Field type="text" name="name" />
-                </label>
+        return (
+            <Formik
+                initialValues={{
+                    name: "",
+                    email: "",
+                    password: "",
+                }}
+                onSubmit={handleSubmit}>
+                <Form autoComplete="off">
+                    <label>Username
+                        <Field type="text" name="name" />
+                    </label>
 
-                <label>
-                    Email
-                    <Field type="email" name="email" />
-                </label>
-                <label>
-                    Password
-                    <Field type="password" name="password" />
-                </label>
-                <button type="submit">Register</button>
-            </Form>
-        </Formik>
-    );
-}
+                    <label>
+                        Email
+                        <Field type="email" name="email" />
+                    </label>
+                    <label>
+                        Password
+                        <Field type="password" name="password" />
+                    </label>
+                    <button type="submit">Register</button>
+                </Form>
+            </Formik>
+        );
+    }

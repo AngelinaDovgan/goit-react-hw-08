@@ -8,7 +8,7 @@ import { Form } from "formik";
 export default function LoginForm() {
     const dispatch = useDispatch();
 
-    const handleSubmit = (values, action) => {
+    const handleSubmit = (values, actions) => {
         dispatch(login(values))
             .unwrap()
             .then(response => {

@@ -11,13 +11,14 @@ const clearAuthHeader = () => {
     axios.defaults.headers.common["Authorization"] = "";
 };
 
+
 export const register = createAsyncThunk(
     "auth/register",
-    async (userInfo, thunkAPI) => {
+    async (information, thunkAPI) => {
         try {
-            const response = await axios.post("/users/signup", userInfo);
-            setAuthHeader(response.data.token);
-            return response.data;
+            const {data} = await axios.post("/users/signup", information);
+            setAuthHeader(data.token);
+            return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -26,11 +27,11 @@ export const register = createAsyncThunk(
 
 export const login = createAsyncThunk(
     "auth/login",
-    async (userInfo, thunkAPI) => {
+    async (information, thunkAPI) => {
         try {
-            const response = await axios.post("/users/login", userInfo);
-            setAuthHeader(response.data.token);
-            return response.data;
+            const {data} = await axios.post("/users/login", information);
+            setAuthHeader(data.token);
+            return data;
         } catch (error) {
             return thunkAPI.rejectWithValue(error.message);
         }
@@ -52,17 +53,16 @@ export const logout = createAsyncThunk(
 export const refreshUser = createAsyncThunk(
     "auth/refresh",
     async (_, thunkAPI) => {
-        const reduxState = thunkAPI.getState();
-        setAuthHeader(reduxState.auth.token);
-
-        const response = await axios.get("/users/current");
-        return response.data;
-    },
-    {
-        condition(_, thunkAPI) {
-            const reduxState = thunkAPI.getState();
-            return reduxState.auth.token !== null;
-        },
-    }
-);
-
+        const state = thunkAPI.getState();
+        const persistedToken = state.auth.token;
+        if (persistedToken === null)
+            return thunkAPI.rejectWithValue("Unable to fetch user");
+        try {
+            setAuthHeader(persistedToken);
+            const { data } = await axios.get('/users/current');
+            return data;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error.message);
+        }
+    })
+    
