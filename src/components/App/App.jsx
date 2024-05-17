@@ -1,19 +1,20 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../Layout/Layout';
-import ContactList from '../ContactList/ContactList';
-import Loader from '../Loader/Loader';
-import SearchBox from '../SearchBox/SearchBox';
-import ContactForm from '../ContactForm/ContactForm';
-import Error from '../Error/Error';
-import { fetchContacts } from '../../redux/contactsOps';
-import { selectLoading, selectError,  } from '../../redux/contactsSlice';
+// import ContactList from '../ContactList/ContactList';
+// import Loader from '../Loader/Loader';
+// import SearchBox from '../SearchBox/SearchBox';
+// import ContactForm from '../ContactForm/ContactForm';
+// import Error from '../Error/Error';
+// import { selectLoading, selectError,  } from '../../redux/contactsSlice';
 import './App.css';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import { refreshUser } from '../../redux/auth/operations';
 import { Routes } from 'react-router-dom';
 import RestrictedRoute from '../RestrictedRoute';
 import PrivateRoute from '../PrivateRoute';
+import { lazy } from 'react';
+import { Route } from 'react-router-dom';
 
 const HomePage = lazy(() => import("../../Pages/HomePage/HomePage"));
 const RegistrationPage = lazy(() => import("../../Pages/RegistrationPage/RegistrationPage"));

@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../redux/auth/operations";
 import toast from "react-hot-toast";
 import { Field, Formik } from "formik";
+import { Form } from "formik";
 
 
 export default function LoginForm() {
@@ -26,7 +27,7 @@ export default function LoginForm() {
                 password: "",
             }}
             onSubmit={handleSubmit}>
-            <Form autocomplete="off">
+            <Form autoComplete="off">
                 <label>
                     Email
                     <Field type="email" name="email" />

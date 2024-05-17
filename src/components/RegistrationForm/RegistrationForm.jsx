@@ -1,5 +1,6 @@
-import { Field, Formik } from "formik";
+import { Field, Formik, Form } from "formik";
 import { useDispatch } from "react-redux";
+import { register } from '../../redux/auth/operations';
 
 export default function RegistrationForm() {
     const dispatch = useDispatch();
@@ -35,4 +36,3 @@ export default function RegistrationForm() {
         </Formik>
     );
 }
-//оновилось?
