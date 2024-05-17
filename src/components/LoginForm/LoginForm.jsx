@@ -3,6 +3,7 @@ import { login } from "../../redux/auth/operations";
 import toast from "react-hot-toast";
 import { Field, Formik } from "formik";
 import { Form } from "formik";
+import css from './LoginForm.module.css';
 
 
 export default function LoginForm() {
@@ -24,7 +25,7 @@ export default function LoginForm() {
 
 
     return (
-        <Formik
+       <Formik
             initialValues={{
                 email: "",
                 password: "",
@@ -42,6 +43,6 @@ export default function LoginForm() {
                 </label>
                 <button type="submit">Log In</button>
             </Form>
-        </Formik>
+            </Formik>
     );
 }

@@ -16,7 +16,7 @@ export default function Contact({ contact: { name, number, id }}) {
            
             <p className={css.ctext}> <FaUser /> {name}</p>
             <p className={css.ctext}> <BsFillTelephoneFill /> {number}</p>
-            <button onClick={handleDelete}>
+            <button onClick={handleDelete} className={css.btn}>
             Delete</button>
         </>
     )

@@ -4,11 +4,8 @@ export default function HomePage() {
     return (
         <div>
             <PageTitle>
-                Welcome
+                Home Page
             </PageTitle>
-            <p>
-                Hello!
-            </p>
         </div>
     )
 }

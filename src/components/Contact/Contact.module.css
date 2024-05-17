@@ -2,3 +2,8 @@
     text-align: left;
     padding-left: 15px;
 }
+
+.btn {
+    background-color: #646cff;
+    color: white;
+}
