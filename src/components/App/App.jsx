@@ -1,12 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../Layout/Layout';
-// import ContactList from '../ContactList/ContactList';
-// import Loader from '../Loader/Loader';
-// import SearchBox from '../SearchBox/SearchBox';
-// import ContactForm from '../ContactForm/ContactForm';
-// import Error from '../Error/Error';
-// import { selectLoading, selectError,  } from '../../redux/contactsSlice';
 import './App.css';
 import { selectIsRefreshing } from '../../redux/auth/selectors';
 import { refreshUser } from '../../redux/auth/operations';
@@ -53,7 +47,6 @@ export default function App() {
     </Layout>
   );
 }
-
 
 
 // export default function App() {
